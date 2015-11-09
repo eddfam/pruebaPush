@@ -18,7 +18,7 @@
 					app.receivedEvent('deviceready');						
 				}, 
 				// Update DOM on a Received Event 
-				receivedEvent: function(id) {
+				receivedEvent: function(id) {  
                     var parentElement = document.getElementById(id);
                     var listeningElement = parentElement.querySelector('.listening');
                     var receivedElement = parentElement.querySelector('.received');
@@ -30,8 +30,8 @@
 					var pushNotification = window.plugins.pushNotification;
 					
 					// obtenemos el sistema operativo del dispositivo //
-					var so = device.platform;
-                    alert(so);
+					var so= device.platform;
+                    alert(so.value());
 			 
 					// declaramos las funciones que obtienen el cod. del dispositivo según su sistema operativo //				
 					if(so=="Android"){
@@ -120,4 +120,19 @@
 			};
 function init_push(){
   app.initialize();
-}
+} 
+		
+		
+
+
+		
+		// Funciones para obtener los id´s de los dispositivos //
+				
+		var regId = window.localStorage.getItem("regId");
+					
+		var token = window.localStorage.getItem("token");
+					
+
+
+				
+
